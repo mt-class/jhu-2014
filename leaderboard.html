@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class=" evernoteSafari"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+
+    <!-- CSS -->
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/mt-class.css" rel="stylesheet">   
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- MathJax -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -90px !important;
+    width: 180px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+  <body style=""><div id="MathJax_Message" style="display: none;"></div>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-fixed-top navbar-default" role="banner">
+      <div class="container">
+        <div class="row">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <ul class="nav navbar-nav">
+            <li id="main_page"><a href="index.html" class="navbar-brand">Machine Translation</a></li>
+          </ul>
+        </div>
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li id="syllabus"><a href="syllabus.html">Syllabus</a></li>
+            <li id="homework">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Homework <span class="caret"></span></a>
+              <ol class="dropdown-menu">
+                <li><a href="hw-writing-exercise.html">Writing Exercise</a></li>
+                <li><a href="hw0.html">0. Setup</a></li>
+                <li><a href="hw1.html">1. Alignment</a></li>
+                <li><a href="hw2.html">2. Decoding</a></li>
+                <li><a href="hw3.html">3. Evaluation</a></li>
+                <li><a href="hw4.html">4. Reranking</a></li>
+                <li><a href="hw5.html">5. Inflection</a></li>
+              </ol>
+            </li>
+            <li id="leaderboard" class="active"><a href="leaderboard.html">Leaderboard</a></li>
+            <li id="project"><a href="project.html">Final Project</a></li>
+            <li id="lin10"><a href="lin10.html">Presentation</a></li>
+          </ul>
+        </nav>
+      </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2 hidden-sm hidden-xs">
+          <a href="http://www.flickr.com/photos/nationaalarchief/3198249977/"> 
+          <img src="assets/img/race.jpg" class="img-responsive img-rounded" alt="">
+          </a> 
+          <span class="text-muted"><i></i></span>
+        </div>
+        <div class="col-sm-10">
+          <p>Submit your assignments <a href="http://jhumtclass.appspot.com">here</a>. Results will be updated immediately.</p>
+
+
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>
+        Rank
+      </th>
+      <th>
+        Handle
+      </th>
+      <th class="text-center">
+        <a href="hw0.html">#0</a><br><span class="small text-muted">Scalar (% N)</span>
+      </th>
+      <th class="text-center">
+        <a href="hw1.html">#1</a><br><span class="small text-muted">Alignment (AER)</span>
+      </th>
+      <th class="text-center">
+        <a href="hw2.html">#2</a><br><span class="small text-muted">Model score</span>
+      </th>
+      <th class="text-center">
+        <a href="hw3.html">#3</a><br><span class="small text-muted">Accuracy</span>
+      </th>
+      <th class="text-center">
+        <a href="hw4.html">#4</a><br><span class="small text-muted">BLEU</span>
+      </th>
+      <th class="text-center">
+        <a href="hw5.html">#5</a><br><span class="small text-muted">Accuracy</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr id="fallingoffthebeam"><td>1</td><td>fallingoffthebeam</td><td class="score text-right">11.000</td><td class="score text-right">0.123</td><td class="score text-right">-1339.466</td><td class="score text-right">0.842</td><td class="score text-right">29.005</td><td class="score text-right">0.705</td></tr><tr id="ksk"><td>2</td><td>ksk</td><td class="score text-right">2.000</td><td class="score text-right">0.169</td><td class="score text-right">-1254.000</td><td class="score text-right">0.785</td><td class="score text-right">29.080</td><td class="score text-right">0.690</td></tr><tr id="matt"><td>3</td><td>matt</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">0.522</td><td class="score text-right">-inf</td><td class="score text-right">0.666</td></tr><tr id="HarryTheHB"><td>4</td><td>HarryTheHB</td><td class="score text-right">5.000</td><td class="score text-right">0.352</td><td class="score text-right">-1223.265</td><td class="score text-right">0.512</td><td class="score text-right">29.212</td><td class="score text-right">0.643</td></tr><tr id="baseline" class="warning"><td>5</td><td>baseline</td><td class="score text-right">89.000</td><td class="score text-right">0.376</td><td class="score text-right">-1316.091</td><td class="score text-right">0.504</td><td class="score text-right">28.863</td><td class="score text-right">0.641</td></tr><tr id="query"><td>6</td><td>query</td><td class="score text-right">77.770</td><td class="score text-right">0.182</td><td class="score text-right">-1266.898</td><td class="score text-right">0.786</td><td class="score text-right">28.773</td><td class="score text-right">0.620</td></tr><tr id="default" class="danger"><td>7</td><td>default</td><td class="score text-right">100.000</td><td class="score text-right">0.681</td><td class="score text-right">-1439.874</td><td class="score text-right">0.449</td><td class="score text-right">27.351</td><td class="score text-right">0.585</td></tr><tr id="oracle" class="success"><td>8</td><td>oracle</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-1215.561</td><td class="score text-right">-inf</td><td class="score text-right">40.057</td><td class="score text-right">-inf</td></tr><tr id="BersaKAIN"><td>9</td><td>BersaKAIN</td><td class="score text-right">56.015</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">27.952</td><td class="score text-right">-inf</td></tr><tr id="jay"><td>10</td><td>jay</td><td class="score text-right">-1.000</td><td class="score text-right">0.300</td><td class="score text-right">-1286.206</td><td class="score text-right">0.515</td><td class="score text-right">26.585</td><td class="score text-right">-inf</td></tr><tr id="rooms_to_let"><td>11</td><td>rooms_to_let</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">0.670</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="JaLozR"><td></td><td>JaLozR</td><td class="score text-right">7.000</td><td class="score text-right">0.331</td><td class="score text-right">-inf</td><td class="score text-right">0.516</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="lièvre"><td></td><td>lièvre</td><td class="score text-right">6.000</td><td class="score text-right">0.177</td><td class="score text-right">-1298.857</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="arnaud.albalat"><td></td><td>arnaud.albalat</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="realcaoyuan"><td></td><td>realcaoyuan</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="tdomhan"><td></td><td>tdomhan</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="julie.medero"><td></td><td>julie.medero</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="nx.niuxiang"><td></td><td>nx.niuxiang</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="mfreitag.i6@googlemail.com"><td></td><td>mfreitag.i6@googlemail.com</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="peterfeng0824"><td></td><td>peterfeng0824</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="martaruizcostajussa"><td></td><td>martaruizcostajussa</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="ronaknnathani"><td></td><td>ronaknnathani</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="lluisf"><td></td><td>lluisf</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="njc.xvii"><td></td><td>njc.xvii</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="kadar.akos"><td></td><td>kadar.akos</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="anoop.sarkar"><td></td><td>anoop.sarkar</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="mtmooc"><td></td><td>mtmooc</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="hueseyin.dagaydin"><td></td><td>hueseyin.dagaydin</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="nitika.mathur"><td></td><td>nitika.mathur</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="vsnine"><td></td><td>vsnine</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr><tr id="angelrajan.research"><td></td><td>angelrajan.research</td><td class="score text-right">-inf</td><td class="score text-right">inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td><td class="score text-right">-inf</td></tr></tbody>
+</table>
+
+<script type="text/javascript" src="leaderboard-code.js"></script>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Legend</div>
+    <div class="panel-body">
+
+   <p>A value of -1 indicates that the assignment file was found but
+   contained invalid content.</p>
+
+   <p>The <span class="text-success">oracle (best possible)</span>, <span class="text-danger">default</span> and 
+   <span class="text-warning">baseline (minimum performance for a B)</span> lines are
+   highlighted.
+  
+
+</p></div></div>
+
+        </div>
+      </div>
+
+      <footer class="text-center text-muted">
+        <hr>
+        Last updated May 09, 2014.<br>
+        Created with 
+        <a href="http://git-scm.com/">git</a>,
+        <a href="http://jekyllrb.com">jekyll</a>,
+        <a href="http://getbootstrap.com/">bootstrap</a>,
+        and <a href="http://www.vim.org/">vim</a>.<br> 
+        Feel free to reuse the 
+        <a href="https://github.com/mt-class/jhu">source code <i class="fa fa-github-alt"></i></a>.<br>
+        <br><br>
+      </footer>
+    </div>
+
+    <!-- Page content of course! -->
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#leaderboard").addClass("active");
+      });
+    </script>
+  
+
+</body></html>
